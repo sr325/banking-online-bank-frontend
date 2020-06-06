@@ -1,0 +1,42 @@
+<div class="layout">
+  <nb-layout>
+    <nb-layout-header>
+      <section class="account-status">
+        <h1>Payments</h1>
+      </section>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <nb-card status="success">
+        <nb-card-header>Payment types</nb-card-header>
+        <nb-card-body>
+          <div>
+            <a [routerLink]="'/paymentTypeBankDetails'">
+              <button class="btn btn-success pull-right" nbButton fullWidth status="info">Pay by bank details</button>
+            </a>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card status="success">
+        <nb-card-header>List of people</nb-card-header>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item *ngFor="let accountHolderContact of accountHolderContacts">
+              {{accountHolderContact}}
+            </nb-list-item>
+          </nb-list>
+
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+
+    <nb-layout-footer>
+      <div class="footer-nav">
+        <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+        <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+        <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>
+</div>

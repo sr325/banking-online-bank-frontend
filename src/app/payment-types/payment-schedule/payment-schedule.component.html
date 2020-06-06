@@ -1,0 +1,32 @@
+<nb-layout>
+  <nb-layout-header>
+    <section class="account-status">
+      <h1>Payments Schedule</h1>
+    </section>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <nb-card-body>
+    </nb-card-body>
+  </nb-layout-column>
+
+  <nb-layout-footer>
+    <div class="row-footer">
+      <div class="column-footer">
+        <a [routerLink]="''">
+          <button class="btn btn-success pull-right"> Home</button>
+        </a>
+      </div>
+      <div class="column-footer">
+        <a [routerLink]="'/paymentTypes'">
+          <button class="btn btn-success pull-right"> Payments</button>
+        </a>
+      </div>
+      <div class="column-footer">
+        <a [routerLink]="'/help'">
+          <button class="btn btn-success pull-right"> Help</button>
+        </a>
+      </div>
+    </div>
+  </nb-layout-footer>
+</nb-layout>

@@ -1,0 +1,16 @@
+.header-nav{
+  position: fixed;
+  top: 0;
+  width: 50%;
+}
+
+.card-body{
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.footer-nav{
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+}

@@ -1,0 +1,25 @@
+<div class="layout">
+  <nb-layout>
+    <nb-layout-header>
+      <section class="account-status">
+        <h1>Help</h1>
+      </section>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <nb-card>
+        <nb-card-header></nb-card-header>
+        <nb-card-body>
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+
+    <nb-layout-footer>
+      <div class="footer-nav">
+        <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+        <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+        <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>
+</div>

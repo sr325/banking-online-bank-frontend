@@ -1,0 +1,65 @@
+<div class="layout">
+  <nb-layout>
+    <nb-layout-header>
+      <section class="account-status">
+        <h1>Payments by bank details</h1>
+      </section>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <nb-card-body>
+        <div class="form-group row">
+          <form [formGroup]="paymentBankDetailForm">
+            <div class="col-sm-12">
+              <label class="label"><strong>Name</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="name">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Sort Code</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="sortCode">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Account Number</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="accountNumber">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Amount</strong></label>
+              <input type="number" nbInput fullWidth status="primary" formControlName="amount">
+            </div>
+
+            <!--          <div class="col-sm-12">
+                        <label class="label"><strong>Account Type</strong></label>
+                        <nb-select status="primary" fullWidth formControlName="accountType">
+                          <nb-option *ngFor="let type of accountTyes | keyvalue" [value]="type.value">
+                            {{type.value}}
+                          </nb-option>
+                        </nb-select>
+                      </div>-->
+
+            <br/><br/>
+
+            <div class="col-sm-12">
+              <button nbButton hero status="success" type="submit" style="float: left"
+                      [disabled]="!paymentBankDetailForm.valid"> Request
+              </button>
+              <button nbButton hero status="success" type="submit" style="float: right"
+                      [disabled]="!paymentBankDetailForm.valid">Pay
+              </button>
+            </div>
+          </form>
+        </div>
+      </nb-card-body>
+    </nb-layout-column>
+
+    <nb-layout-footer>
+      <div class="footer-nav">
+        <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+        <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+        <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>
+</div>

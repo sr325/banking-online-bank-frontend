@@ -1,0 +1,54 @@
+<div class="layout">
+  <nb-layout>
+    <nb-layout-header>
+      <section class="account-description">
+        <h1>{{account.description}}</h1>
+      </section>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <nb-card>
+        <button [routerLink]="['/account', account.accountUid]" nbButton hero status="primary">Back to account</button>
+      </nb-card>
+
+      <nb-card status="success">
+        <nb-card-header>Account details</nb-card-header>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item> Card name: {{account.card.name}} </nb-list-item>
+            <nb-list-item>Sort Code: {{account.card.sortCode}}</nb-list-item>
+            <nb-list-item>AccountNumber: {{account.card.accountNumber}}</nb-list-item>
+            <nb-list-item>Number: {{account.card.number}}</nb-list-item>
+            <nb-list-item>Balance: {{account.card.balance.balance}}</nb-list-item>
+            <nb-list-item>Overdraft limit: {{account.card.accountLimit.overdraftLimit}}</nb-list-item>
+            <nb-list-item>Withdraw limit: {{account.card.accountLimit.withdrawLimit}}</nb-list-item>
+          </nb-list>
+        </nb-card-body>
+<!--        <nb-card-footer>
+          <button nbButton hero status="primary"> Share account details</button>
+        </nb-card-footer>-->
+      </nb-card>
+
+      <nb-card status="success">
+        <nb-card-header>Bank details</nb-card-header>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item>Bank address: Bank X, 1 King Street, Canary Wharf, London, K11 1QQ, United Kingdom</nb-list-item>
+            <nb-list-item>BIC Number: BANKGB2L</nb-list-item>
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+      <!--      <section class="account-card-image">
+              <img src="../../assets/img/fake-bank-image.png" alt="Fake Bank card image" width="400" height="200">
+            </section>-->
+    </nb-layout-column>
+
+    <nb-layout-footer>
+      <div class="footer-nav">
+        <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+        <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+        <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>
+</div>

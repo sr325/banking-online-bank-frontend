@@ -1,0 +1,53 @@
+<div class="layout">
+  <nb-layout>
+    <nb-layout-header>
+      <section class="account-description">
+        <h1>{{account.description}}</h1>
+      </section>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <section class="account-transactions">
+        <nb-card>
+          <button [routerLink]="['./accountDetail']" nbButton hero status="primary">Account Detail</button>
+        </nb-card>
+
+        <nb-card status="success">
+          <nb-card-header>TRANSACTIONS</nb-card-header>
+          <nb-card-body>
+            <table>
+              <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of transactions">
+                <td>{{ item.transaction_id }}</td>
+                <td>{{ item.amount }}</td>
+                <td>{{ item.transactionType }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </nb-card-body>
+<!--          <nb-card-footer>
+            <button nbButton hero status="primary"> Download </button>
+          </nb-card-footer>-->
+        </nb-card>
+      </section>
+      <!--      <section class="account-card-image">
+              <img src="../../assets/img/fake-bank-image.png" alt="Fake Bank card image" width="400" height="200">
+            </section>-->
+    </nb-layout-column>
+
+    <nb-layout-footer>
+      <div class="footer-nav">
+        <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+        <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+        <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>
+</div>

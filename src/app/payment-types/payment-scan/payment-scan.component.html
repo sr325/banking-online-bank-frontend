@@ -1,0 +1,59 @@
+<div class="layout">
+<nb-layout>
+  <nb-layout-header>
+    <section class="account-status">
+      <h1>Payments by scan</h1>
+    </section>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <nb-card-body>
+      <section class="scanner">
+        <img src="../../assets/img/fake-barcode-image.PNG" alt="Fake Bank card image" width="400" height="200">
+      </section>
+
+      <section class="recipientDetails">
+        <img src="../../assets/img/fake-avator-image.PNG" alt="Fake Bank card image" width="400" height="200">
+
+        <div class="form-group row">
+          <form [formGroup]="recipientDetailForm">
+            <div class="col-sm-12">
+              <label class="label"><strong>Name</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="name">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Sort Code</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="sortCode">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Account Number</strong></label>
+              <input type="text" nbInput fullWidth status="primary" formControlName="accountNumber">
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label"><strong>Amount</strong></label>
+              <input type="number" nbInput fullWidth status="primary" formControlName="amount">
+            </div>
+            <br/><br/>
+
+            <div class="col-sm-12">
+              <button nbButton hero status="success" type="submit" style="float: left" [disabled]="!recipientDetailForm.valid"> Request </button>
+              <button nbButton hero status="success" type="submit" style="float: right" [disabled]="!recipientDetailForm.valid">Send</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </nb-card-body>
+  </nb-layout-column>
+  <nb-layout-footer>
+    <div class="footer-nav">
+      <button [routerLink]="''" nbButton hero status="primary"> Home</button>
+      <button [routerLink]="'/paymentTypes'" nbButton hero status="primary"> Payments</button>
+      <button [routerLink]="'/help'" nbButton hero status="primary" style="float: right"> Help</button>
+    </div>
+  </nb-layout-footer>
+</nb-layout>
+</div>
